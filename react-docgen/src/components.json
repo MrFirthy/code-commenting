@@ -1,0 +1,1166 @@
+{
+  "app/components/common/AcceptConditions.jsx": {
+    "description": "A checkbox for accepting terms & conditions.",
+    "props": {
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The label text for the input"
+      },
+      "onOptIn": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "A function called when a user checks a previously unchecked checkbox"
+      },
+      "savedInput": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Saved content for an input that has been previously filled in"
+      },
+      "hintTxt": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text provided to the user to help them with their input"
+      },
+      "error": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text displayed if an error occurs"
+      },
+      "showError": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determine if an errors that occur should be shown"
+      }
+    }
+  },
+  "app/components/common/AddressInput.jsx": {
+    "description": "A combination of PostCode and DropDown for a user to enter a postcode and then select their address from the results.",
+    "props": {
+      "savedInput": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The previous inputted value from a user (if applicable)"
+      },
+      "updatePostcode": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method used when a user updates their postcode"
+      },
+      "updateMpan": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method used to update a users MPAN"
+      },
+      "onSaveAddress": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle saving an address"
+      },
+      "storeAddressesforPostcode": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to store address results from a postcode lookup"
+      },
+      "addressesForPostcode": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "All address results from a postcode lookup"
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Label text if wanted"
+      },
+      "property": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "All details for a selected property"
+      },
+      "showError": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Handles if errors should be displayed or not"
+      },
+      "productGSP": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Stores the grid supply point for a product"
+      },
+      "productID": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "Unique ID of a product"
+      },
+      "product": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "All details for a product"
+      },
+      "addressNotListedComp": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "error for a persons address not being listed"
+      },
+      "multipleMPANSComp": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "error for a property having multiple MPANs"
+      }
+    }
+  },
+  "app/components/common/CheckBox.jsx": {
+    "description": "A custom Checkbox.",
+    "props": {
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Label text to accompany the checkbox input"
+      },
+      "checked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether the checkbox is checked or not"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle what happens when the checkbox is changed"
+      }
+    }
+  },
+  "app/components/common/CreditCheck.jsx": {
+    "description": ""
+  },
+  "app/components/common/DirectDebitInstructions.jsx": {
+    "description": "A simple visibility toggle that displays regulatory text about Direct Debits."
+  },
+  "app/components/common/DjangoCSRFToken.jsx": {
+    "description": "Includes a hidden input element with Django's CSRF token.\n\nUseful for constructing forms in React that will be submitted to Django.\n\nUses getCookie from https://docs.djangoproject.com/en/dev/ref/csrf/#ajax,\nbut replaced jQuery's trim with native version."
+  },
+  "app/components/common/DropDown.jsx": {
+    "description": "A custom styled drop down component.",
+    "props": {
+      "options": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "option"
+          }
+        },
+        "required": true,
+        "description": "All available dropdown options"
+      },
+      "isDisabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines whether the dropdown is disabled or not",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onSelect": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle selecting a dropdown option"
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text for the messaging shown before someone chooses an option"
+      },
+      "labelText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text for the messaging shown in the select label",
+        "defaultValue": {
+          "value": "'Select an option:'",
+          "computed": false
+        }
+      },
+      "showLabelText": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines whether the label text is displayed or not",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "app/components/common/ErrorPathContact.jsx": {
+    "description": "A component designed to create the content sent to Octopus by a customer via an automated email link if they encounter an error.",
+    "props": {
+      "customer": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Customer information"
+      },
+      "property": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Property information"
+      },
+      "quote": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Details of a users quote"
+      },
+      "product_id": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "ID of the user's selected product"
+      },
+      "url": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Email address the email is sent to"
+      },
+      "subject": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Subject of the email"
+      },
+      "linkTxt": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text of the link"
+      }
+    }
+  },
+  "app/components/common/FAQ.jsx": {
+    "description": "A standard visibility toggle that displays frequently asked questions."
+  },
+  "app/components/common/Input.jsx": {
+    "description": "A custom styled input capable of being multiple 'types' and allowing custom keyboard patterns to be passed.",
+    "props": {
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The inputs label"
+      },
+      "hintTxt": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Help text provided to the user"
+      },
+      "savedInput": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Saved content for an input that has been previously filled in"
+      },
+      "focus": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines if the input should be autofocused by default"
+      },
+      "isValid": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "A boolean check to see if input content is valid"
+      },
+      "handleChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "A function called when input content is changed"
+      },
+      "error": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text displayed in the event of an error"
+      },
+      "pattern": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "A keyboard pattern provided to override the default keyboard on mobile"
+      },
+      "prefix": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Content displayed before the input (for example '07' before a mobile number)"
+      },
+      "showError": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "A boolean to determine whether to show an error"
+      },
+      "type": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Defines the 'type' attribute on the input. Defaults to 'text'"
+      },
+      "index": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Defines the index for the input, used if multiples are generated to keep ID's unique"
+      },
+      "hideLabel": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specifies if the input should have hide it's corresponding label"
+      },
+      "tooltip": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specifies if the input should have a tooltip alongside it"
+      },
+      "tooltipText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Defines the text shown in the input's accompanying tooltip"
+      }
+    }
+  },
+  "app/components/common/ManualAddressEntry.jsx": {
+    "description": "A form to allow users to manually enter their address",
+    "props": {
+      "updateAddress": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle the updating/submission of a users supplied address"
+      }
+    }
+  },
+  "app/components/common/Modal.jsx": {
+    "description": "A simple visibility toggle that displays regulatory text about Direct Debits.",
+    "props": {
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The text of the modal title"
+      },
+      "closeText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text for the close button (defaults to 'Close')"
+      },
+      "content": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The HTML content of the modal"
+      },
+      "handleClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle when the modal is closed"
+      }
+    }
+  },
+  "app/components/common/Password.jsx": {
+    "description": "A custom password input with a show/hide toggle of the input value.",
+    "props": {
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text of the password label"
+      },
+      "onUpdatePassword": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method for handling when the password is updated"
+      }
+    }
+  },
+  "app/components/common/Postcode.jsx": {
+    "description": "A custom input attribute designed to take a postcode and format & validate it on the fly.",
+    "props": {
+      "focus": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines if the input should be autofocused by default"
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text of the postcode label"
+      },
+      "postcode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The default postcode value if supplied previously"
+      },
+      "onPostcodeChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle the change in provided postcode"
+      },
+      "showError": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines whether error messages should be displayed to the user"
+      },
+      "numberOfAssociatedAddresses": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Integer representing the number of associated address to a supplied postcode"
+      }
+    }
+  },
+  "app/components/common/Slider.jsx": {
+    "description": "A component designed to show a user's progression through a certain flow.",
+    "props": {
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The text of the slider label"
+      },
+      "hintTxt": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Accompanying text to help a user understand the slider"
+      },
+      "percentComplete": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Integer representing the fullness of the slider (out of 100)"
+      }
+    }
+  },
+  "app/components/common/SortCode.jsx": {
+    "description": "A custom text input designed to take a sort code and format & validate it on the fly.",
+    "props": {
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The text of the label for sortcode entry"
+      },
+      "hintTxt": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Accompanying text to help a user understand the sortcode entry"
+      },
+      "savedInput": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The sortcode value if supplied previously"
+      },
+      "isValid": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines whether a postcode is valid or not"
+      },
+      "pattern": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Specifies the regex pattern for sortcode entry (currently not used)"
+      },
+      "handleChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method for handling a change in sortcode entry"
+      },
+      "error": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text for an error displayed to a user"
+      },
+      "showError": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines whether error messages should be displayed to the user"
+      }
+    }
+  },
+  "app/components/common/Toggle.jsx": {
+    "description": "A custom checkbox input styled to look like a toggle.",
+    "props": {
+      "checked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines if the toggle is checked or not"
+      },
+      "onCheck": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle when the checkbox is checked or unchecked"
+      }
+    }
+  },
+  "app/components/common/Tooltip.jsx": {
+    "description": "A simple visibility toggle that displays informational text.",
+    "props": {
+      "icon": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The icon used for the tooltip button (defaults to a question mark)"
+      },
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The text shown when a user hits the tooltip icon"
+      },
+      "class": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The class used to style/format the Tooltip"
+      }
+    }
+  },
+  "app/components/join-wizard/Nest.jsx": {
+    "description": ""
+  },
+  "app/components/join-wizard/SampleDD.jsx": {
+    "description": "A component to display sample Direct Debit information."
+  },
+  "app/components/join-wizard/SimpleTariffConfirmation.jsx": {
+    "description": "A simplified version of Step3.jsx. Basically just employs the reusable components from there.",
+    "props": {
+      "product": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "app/components/join-wizard/Step1.jsx": {
+    "description": "A component designed to handle the components and content displayed on step 1 of the join wizard.",
+    "props": {
+      "quote": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "All data relating to a customer's quote"
+      },
+      "customer": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "All data relating to a customer"
+      },
+      "property": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "All data relating to a customer's property"
+      },
+      "product": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "All data relating to a customer's chosen product"
+      },
+      "previous_billing_contact_status": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Name of the person currently on the customer's property's bills"
+      },
+      "updateAddress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's address"
+      },
+      "updateGivenName": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's given name"
+      },
+      "updateFamilyName": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's family name"
+      },
+      "updateEmail": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's email address"
+      },
+      "updateMobile": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's mobile number"
+      },
+      "updatePostcode": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's postcode"
+      },
+      "updateQuote": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's quote"
+      },
+      "updateCurrentBillingStatus": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's current billing status"
+      },
+      "updatePreviousBillingContact": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a user's previous billing contact"
+      },
+      "storeAddressesforPostcode": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle the storing of addresses relating to the postcode inputted by a user"
+      },
+      "optIn": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Method to handle updating a decision to either opt in or out of receiving offers and ideas"
+      },
+      "addresses": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "Addresses relating to the postcode inputted by a user"
+      }
+    }
+  },
+  "app/components/join-wizard/Step2.jsx": {
+    "description": "A component designed to handle the components and content displayed on step 2 of the join wizard."
+  },
+  "app/components/join-wizard/Step3.jsx": {
+    "description": "A component designed to handle the components and content displayed on step 3 of the join wizard."
+  },
+  "app/components/join-wizard/TermsAndConditions.jsx": {
+    "description": "",
+    "props": {
+      "pdfURL": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sectionHeading": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "conditionsHTML": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "promptToAccept": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "externalErrors": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "app/components/join-wizard/YourTariff.jsx": {
+    "description": "",
+    "props": {
+      "product": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sectionHeading": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "app/components/quote-wizard/BtnComponent.jsx": {
+    "description": "A component for the multiple choice buttons used in the Quote wizard",
+    "props": {
+      "values": {
+        "type": {
+          "name": "array"
+        },
+        "required": true,
+        "description": "All options for the multiple choice buttons"
+      },
+      "chosen": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The currrent chosen option"
+      },
+      "handleChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle the change in chosen button"
+      },
+      "joined": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines if multiple buttons should be joined stylistically"
+      }
+    }
+  },
+  "app/components/quote-wizard/CalculationBreakDown.jsx": {
+    "description": "Shows the user a full breakdown of their tariff quote"
+  },
+  "app/components/quote-wizard/EmailQuote.jsx": {
+    "description": "",
+    "props": {
+      "quote_code": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "product_id": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "app/components/quote-wizard/FuelType.jsx": {
+    "description": "Retrieves the user's usage statistics on the first page of the quote flow.",
+    "props": {
+      "changeFuelType": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle a user changing fuel type"
+      },
+      "dual_fuel": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines if fuel type is dual fuel (optional as it starts as null)"
+      },
+      "elec_annual_consumption_day": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Consumption usage in KwH of a user's daytime electiricty (if they have an Eco7 meter)"
+      },
+      "elec_annual_consumption_night": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Consumption usage in KwH of a user's nighttime electiricty (if they have an Eco7 meter)"
+      },
+      "elec_annual_consumption_standard": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Consumption usage in KwH of a user's electiricty (if they have a standard meter)"
+      },
+      "estimates": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": "All data relating to a user's estimate"
+      },
+      "gas_annual_consumption": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Consumption usage in KwH of a user's gas"
+      },
+      "meter_type": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The type of a user's meter"
+      },
+      "showError": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "Determines if errors should be shown to the user"
+      },
+      "updateUsage": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle updating a user's usage based on their input"
+      }
+    }
+  },
+  "app/components/quote-wizard/Location.jsx": {
+    "description": "Retrieves the user's location on the first page of the quote flow.",
+    "props": {
+      "confirmLocation": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "Whether the customer has confirmed our guess at their location"
+      },
+      "enterPostcode": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "location_name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Name of the location provided to users based on their IP"
+      },
+      "location_expanded": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "Determines if location info should be expanded (currently not used)"
+      },
+      "expandLocation": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle expanding the location info"
+      },
+      "showError": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "Determines if errors should be displayed to users"
+      },
+      "updatePostcode": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Method to handle a user updating their postcode"
+      }
+    }
+  },
+  "app/components/quote-wizard/MeterType.jsx": {
+    "description": "Retrieves the user's location and meter type on the first page of the quote flow."
+  },
+  "app/components/quote-wizard/Paying.jsx": {
+    "description": "Retrieves the user's current supplier, payment type, and tariff name (if possible)."
+  },
+  "app/components/quote-wizard/ProductSelect.jsx": {
+    "description": "Displays information for a Tariff available to a user.",
+    "props": {
+      "product": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "All data relating to the product displayed"
+      }
+    }
+  },
+  "app/components/quote-wizard/SimpleTariffPicker.jsx": {
+    "description": "A heavily simplified version of the TariffContainer used in the quote wizard.\n\nIt is used to let customers select their next tariff after their fixed term ends.\n\nIt is essentially a copy of TariffContainer, freed from redux, and cleaned up\nwith a hacksaw. The remaining redundancies could be removed by introducing\nsimple sub-components that are shared between the two. But due to the current\ntime constraints, that needs to be left for another time.",
+    "props": {
+      "quoteCode": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "products": {
+        "type": {
+          "name": "array"
+        },
+        "required": true,
+        "description": ""
+      },
+      "confirmURL": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "currentTariffs": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "app/components/quote-wizard/Tariff.jsx": {
+    "description": "Displays information for a Tariff available to a user.",
+    "props": {
+      "tariff": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "All data relating to the tariff displayed"
+      },
+      "selected": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines whether the tariff is selected or not"
+      },
+      "dual_fuel": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determines whether the tariff is dual fuel or not"
+      },
+      "elec_annual_consumption_standard": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Consumption usage in KwH of a tariff's electiricty (if the tariff is for a standard meter)"
+      },
+      "elec_annual_consumption_day": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Consumption usage in KwH of a tariff's daytime electiricty (if the tariff is for an Eco7 meter)"
+      },
+      "elec_annual_consumption_night": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Consumption usage in KwH of a tariff's nighttime electiricty (if the tariff is for an Eco7 meter)"
+      },
+      "gas_annual_consumption": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Consumption usage in KwH of a tariff's gas"
+      }
+    }
+  },
+  "app/components/quote-wizard/Usage.jsx": {
+    "description": "Retrieves the user's usage statistics on the first page of the quote flow."
+  }
+}

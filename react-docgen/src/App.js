@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import data from './components.json';
+import Docs from './Docs';
 import './App.css';
+
+console.log(data);
 
 class App extends Component {
   render() {
