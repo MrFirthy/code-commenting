@@ -1,0 +1,15 @@
+{
+  "src/components/Square.js": {
+    "description": "A square involving some stuff",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The text for the square"
+      }
+    }
+  }
+}

@@ -19,14 +19,14 @@ class ComponentSingle extends React.Component {
         for (const content in sortedProps) {
             const sortedRef = sortedProps[content];
             const propObj = this.props.obj.props[sortedRef];
-            const requiredText = propObj.required ? <span className="ComponentDocs-required">REQUIRED</span> : null;
+            const requiredText = propObj.required ? <span className="Doc--required">REQUIRED</span> : null;
             propNames.push(
-                <div key={content} className="ComponentDocs-property">
+                <div key={content} className="Doc--property">
                     <p>
                         <strong>{sortedRef}:</strong>
                         {propObj.type.name} {requiredText}
                     </p>
-                    {propObj.description ? <div className="row"><div className="col-xs-12"><p className="ComponentDocs-description">{propObj.description}</p></div></div> : null}
+                    {propObj.description ? <p className="Doc--description">{propObj.description}</p> : null}
                 </div>
             );
         }
