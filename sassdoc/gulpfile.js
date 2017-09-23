@@ -67,13 +67,18 @@ gulp.task('sassdoc', function() {
 });
 
 /* -----------------------------------------------------------------------------
- * Task - watch
- * Generate CSS and sassdoc documentation when a SASS file is changed
+ * Task - browser-sync
+ * Starts the Browser Sync server and sets up watch tasks for file changes
  * -------------------------------------------------------------------------- */
-gulp.task('watch', function() {
+gulp.task('browser-sync', ['sass', 'sassdoc'], function () {
+    $.browserSync.init({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
+
+    // Generate CSS and sassdoc documentation when a SASS file is changed
     gulp.watch(config.sass.glob, ['sass', 'sassdoc']);
 });
 
-gulp.task('start', ['sass', 'sassdoc', 'watch']);
-
-gulp.task('default', ['start']);
+gulp.task('default', ['browser-sync']);
