@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Square.css';
 
 /**
  * A square involving some stuff

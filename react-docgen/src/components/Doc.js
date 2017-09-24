@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Docs.css';
 
-class ComponentSingle extends React.Component {
+/**
+ * A component to display the information about a single component
+ */
+class Doc extends React.Component {
 
     render() {
         function keys(obj) {
@@ -22,9 +26,9 @@ class ComponentSingle extends React.Component {
             const requiredText = propObj.required ? <span className="Doc--required">REQUIRED</span> : null;
             propNames.push(
                 <div key={content} className="Doc--property">
+                    <h3>{sortedRef}</h3>
                     <p>
-                        <strong>{sortedRef}:</strong>
-                        {propObj.type.name} {requiredText}
+                        Type: <strong>{propObj.type.name}</strong> {requiredText}
                     </p>
                     {propObj.description ? <p className="Doc--description">{propObj.description}</p> : null}
                 </div>
@@ -35,7 +39,7 @@ class ComponentSingle extends React.Component {
         return (
             <div className="Doc">
                 <h2>{cleanName}</h2>
-                <p>{this.props.obj.description}</p>
+                <p className="Doc--description">{this.props.obj.description}</p>
                 {propNames.length ? null : <p className="Doc--noProperties">This component has no properties</p>}
                 {propNames}
             </div>
@@ -43,31 +47,15 @@ class ComponentSingle extends React.Component {
     }
 }
 
-ComponentSingle.propTypes = {
+Doc.propTypes = {
+    /**
+     * The object containing information about the Doc
+     */
     obj: PropTypes.object.isRequired,
+    /**
+     * The name of the component
+     */
     component: PropTypes.string.isRequired,
 }
 
-class ComponentDocs extends React.Component {
-
-    render() {
-        const coms = [];
-        for (const component in this.props.data) {
-            const obj = this.props.data[component];
-            coms.push(<ComponentSingle component={component} key={component} obj={obj} />);
-        }
-        return (
-            <div>
-                <h1>React component docs</h1>
-                <p>Below are all of the generated docs for this project's react components.</p>
-                {coms}
-            </div>
-        )
-    }
-}
-
-ComponentDocs.propTypes =  {
-    data: PropTypes.object.isRequired
-}
-
-export default ComponentDocs
+export default Doc
