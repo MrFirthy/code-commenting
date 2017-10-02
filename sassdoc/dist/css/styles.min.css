@@ -198,10 +198,10 @@ th {
  * -------------------------------------------------------------------------- */
 body {
   font-family: 'Noto Serif', serif;
-  background-color: #efefef; }
+  background-color: #ffffff; }
 
 .content {
-  width: 960px;
+  width: 768px;
   margin: 0 auto;
   text-align: center; }
 
