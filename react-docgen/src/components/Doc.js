@@ -19,29 +19,26 @@ class Doc extends React.Component {
         }
 
         const sortedProps = keys(this.props.obj.props).sort();
-        const propNames = [];
+
+        const props = [];
         for (const content in sortedProps) {
-            const sortedRef = sortedProps[content];
-            const propObj = this.props.obj.props[sortedRef];
+            const propName = sortedProps[content], propObj = this.props.obj.props[propName];
             const requiredText = propObj.required ? <span className="Doc--required">REQUIRED</span> : null;
-            propNames.push(
-                <div key={content} className="Doc--property">
-                    <h3>{sortedRef}</h3>
-                    <p>
-                        Type: <strong>{propObj.type.name}</strong> {requiredText}
-                    </p>
+            props.push(
+                <div key={content}>
+                    <h3>{propName}</h3>
+                    <p>Type: <strong>{propObj.type.name}</strong> {requiredText}</p>
                     {propObj.description ? <p className="Doc--description">{propObj.description}</p> : null}
                 </div>
             );
         }
 
-        const cleanName = this.props.component.substring(15);
         return (
             <div className="Doc">
-                <h2>{cleanName}</h2>
+                <h2>{this.props.component}</h2>
                 <p className="Doc--description">{this.props.obj.description}</p>
-                {propNames.length ? null : <p className="Doc--noProperties">This component has no properties</p>}
-                {propNames}
+                {props.length ? null : <p className="Doc--noProperties">This component has no properties</p>}
+                {props}
             </div>
         )
     }
