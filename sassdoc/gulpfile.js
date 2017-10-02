@@ -56,10 +56,9 @@ gulp.task('sassdoc', function() {
         },
         groups: {
             colours: 'Colours',
-            breakpoints: 'Breakpoints',
-            mixins: 'Mixins'
+            breakpoints: 'Breakpoints'
         },
-        basePath: 'https://github.com/MrFirthy/code-commenting/tree/master/src/sass',
+        basePath: 'https://github.com/MrFirthy/code-commenting/tree/master/sassdoc/src/sass',
     };
 
     return gulp.src(config.sass.glob)
