@@ -9,16 +9,16 @@ import './Docs.css';
 class Docs extends React.Component {
 
     render() {
-        const coms = [];
+        const comps = [];
         for (const component in this.props.data) {
             const obj = this.props.data[component];
-            coms.push(<Doc component={component} key={component} obj={obj} />);
+            comps.push(<Doc component={component} key={component} obj={obj} />);
         }
         return (
             <div>
                 <h1>React component docs</h1>
                 <p>Below are all of the generated docs for this project's react components.</p>
-                {coms}
+                {comps}
             </div>
         )
     }
